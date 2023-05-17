@@ -478,10 +478,6 @@ void TIM6_IRQHandler(void)//读取速度数据、修改占空比中断函数
         speed2 = pid_motor_2_out(abs(Temp2),target_speed2);
         speed3 = pid_motor_3_out(abs(Temp3),target_speed3);
         speed4 = pid_motor_4_out(abs(Temp4),target_speed4);//修改占空比
-        OLED_ShowSignedNum(1,10,speed4,5);
-        OLED_ShowSignedNum(2,10,pid_motor_4.pwm,5);
-        OLED_ShowSignedNum(3,10,Temp4,5);
-        OLED_ShowSignedNum(4,10,target_speed4,5);
         TIM_ClearITPendingBit(TIM6,TIM_IT_Update);
     }
 
